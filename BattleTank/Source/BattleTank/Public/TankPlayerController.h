@@ -20,4 +20,9 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	void AimTowardsCrosshair();
+
+	bool GetSightRayHitLocation(FVector& OUTHitLocation) const;
+
+private:
+
 };

@@ -28,16 +28,22 @@ void ATankPlayerController::Tick(float DeltaTime)
 void ATankPlayerController::AimTowardsCrosshair()
 {
 	if (!GetControlledTank())
-	{
-		return;
-	}
-	//get world location if line trace through crosshair
+	{ return; }
+	//get world location of line trace through crosshair
 	//if hits smth
 		//tell controlled tank to aim at
-	else
+	FVector HitLocation;
+	if (GetSightRayHitLocation(HitLocation)) 
 	{
+		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *HitLocation.ToString())
 
 	}
+}
+
+bool ATankPlayerController::GetSightRayHitLocation(FVector& OUTHitLocation) const //going to line trace
+{
+	OUTHitLocation = FVector(1.0);
+	return true;
 }
 
 
