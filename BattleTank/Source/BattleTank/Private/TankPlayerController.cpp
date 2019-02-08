@@ -49,7 +49,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	if (GetLookDirection(ScreenLocation, LookDirection))
 	{
 		GetLookVectorHitLocation(LookDirection, HitLocation);
-		UE_LOG(LogTemp, Warning, TEXT("Hit location^ %s"), *HitLocation.ToString())
+		GetControlledTank()->AimAt(HitLocation);
 	}
 
 	// Line-trace along that LookDirection, and see what we hit (up to max range)
