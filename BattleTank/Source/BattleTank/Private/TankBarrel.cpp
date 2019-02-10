@@ -4,5 +4,5 @@
 
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
-	
+	auto ElevationChange = RelativeSpeed * MaxDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
 }
