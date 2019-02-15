@@ -1,5 +1,6 @@
 #include "Tank.h"
 #include "TankAimingComponent.h"
+#include "Runtime/Engine/Classes/GameFramework/Actor.h"
 #include "BattleTank.h"
 
 
@@ -27,6 +28,12 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+}
+
+void ATank::Fire()
+{
+	auto Time = GetWorld()->GetTimeSeconds();
+	UE_LOG(LogTemp, Warning, TEXT("%f: Tank fired"), Time)
 }
 
 void ATank::AimAt(FVector HitLocation)
