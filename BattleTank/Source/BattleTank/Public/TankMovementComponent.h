@@ -14,4 +14,11 @@ class BATTLETANK_API UTankMovementComponent : public UNavMovementComponent
 {
 	GENERATED_BODY()
 	
+public:
+	UFUNCTION(BlueprintCallable, Category = Input)
+	void IntendMoveForward(float Throw);
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Setup)
+	UTankMovementComponent* tankpointer;
 };
